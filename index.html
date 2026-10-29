@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>body{margin:0}</style>
+<title>오사카 가족여행 11월</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
+<style>
+/* layout: 한 줄 세로 스크롤, 상단 고정 탭 → 일정(날짜 카드) · 준비 · 특이사항 · 크루즈 · 맛집 · 링크 */
+:root{
+  --bg:#f6f4ef; --surface:#ffffff; --fg:#1d2433; --muted:#5d6577; --line:#dfdcd3;
+  --ai:#24427a; --kaki:#d0612a; --ok:#2f7d4f; --todo:#8a8f9c; --warn:#b5861c;
+  --ai-soft:#e6ebf5; --kaki-soft:#fbe9df;
+  --display:"Gowun Batang","Noto Serif KR",serif;
+  --body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12161f; --surface:#1a202c; --fg:#e7e9ee; --muted:#9aa2b3; --line:#2c3444;
+  --ai:#8fb0ec; --kaki:#f08a55; --ok:#5fc08a; --todo:#7d8496; --warn:#e2b54a;
+  --ai-soft:#1f2b44; --kaki-soft:#3a2418; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12161f; --surface:#1a202c; --fg:#e7e9ee; --muted:#9aa2b3; --line:#2c3444;
+  --ai:#8fb0ec; --kaki:#f08a55; --ok:#5fc08a; --todo:#7d8496; --warn:#e2b54a;
+  --ai-soft:#1f2b44; --kaki-soft:#3a2418; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.6;padding-inline:16px;padding-block:0 48px}
+.wrap{max-width:760px;margin:0 auto}
+a{color:var(--ai)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--kaki);outline-offset:2px}
+header.hero{padding-block:28px 18px}
+.eyebrow{font-size:12px;letter-spacing:.12em;color:var(--kaki);font-weight:600}
+h1{font-family:var(--display);font-size:clamp(28px,7vw,40px);line-height:1.2;margin:.2em 0 .3em;text-wrap:balance}
+.meta{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:13px;padding:4px 10px;border-radius:999px;background:var(--ai-soft);color:var(--ai);font-weight:500}
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;gap:6px;overflow-x:auto;padding-block:10px;border-bottom:1px solid var(--line);margin-inline:-16px;padding-inline:16px;scrollbar-width:none}
+nav.tabs a{flex:none;text-decoration:none;font-size:14px;color:var(--muted);padding:6px 12px;border-radius:999px;border:1px solid var(--line)}
+nav.tabs a:hover{color:var(--fg);border-color:var(--fg)}
+section{padding-top:28px;scroll-margin-top:56px}
+h2{font-family:var(--display);font-size:24px;margin:0 0 12px}
+h3{font-size:15px;margin:20px 0 8px;color:var(--muted);font-weight:600}
+.day{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden}
+.day-h{display:flex;align-items:baseline;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.day-n{font-family:var(--display);font-size:26px;color:var(--kaki);font-variant-numeric:tabular-nums;line-height:1}
+.day-t{font-weight:600}
+.day-d{font-size:13px;color:var(--muted)}
+.slots{list-style:none;margin:0;padding:6px 0}
+.slots li{display:grid;grid-template-columns:72px 1fr;gap:10px;padding:8px 16px}
+.slots time{font-size:13px;color:var(--ai);font-weight:600;font-variant-numeric:tabular-nums}
+.slots b{font-weight:600}
+.slots small{display:block;color:var(--muted);font-size:13px}
+.prog{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:6px}
+.bar{flex:1;height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ok)}
+.prog span{font-size:14px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.list{list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.list li{display:grid;grid-template-columns:auto 1fr;gap:10px;padding:10px 14px;border-top:1px solid var(--line)}
+.list li:first-child{border-top:0}
+.st{font-size:12px;font-weight:600;padding:2px 8px;border-radius:6px;white-space:nowrap;height:fit-content;margin-top:2px}
+.st.ok{color:var(--ok);background:color-mix(in srgb,var(--ok) 14%,transparent)}
+.st.todo{color:var(--todo);border:1px solid var(--line)}
+.st.ask{color:var(--warn);background:color-mix(in srgb,var(--warn) 16%,transparent)}
+.list b{font-weight:600}
+.list small{display:block;color:var(--muted);font-size:13px}
+.note{display:grid;gap:10px}
+.note div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.note div.hot{border-color:var(--kaki);background:var(--kaki-soft)}
+.note b{display:block;margin-bottom:2px}
+.note p{margin:0;font-size:14px;color:var(--fg)}
+.kv{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin:0}
+.kv div{display:grid;grid-template-columns:72px 1fr;gap:10px;padding:10px 16px;border-top:1px solid var(--line)}
+.kv div:first-child{border-top:0}
+.kv dt{color:var(--muted);font-size:13px;font-weight:600}
+.kv dd{margin:0;font-size:14px}
+.food{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.food div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-width:0}
+.food .k{font-size:12px;color:var(--kaki);font-weight:600;letter-spacing:.04em}
+.food b{display:block;margin:2px 0}
+.food p{margin:0;font-size:13px;color:var(--muted)}
+.tag{display:inline-block;font-size:11px;font-weight:600;padding:1px 6px;border-radius:4px;margin-top:6px}
+.tag.y{color:var(--ok);background:color-mix(in srgb,var(--ok) 14%,transparent)}
+.tag.n{color:var(--muted);border:1px solid var(--line)}
+ol.steps{margin:0;padding-left:20px;font-size:14px}
+ol.steps li{padding:3px 0}
+.links{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.links a{display:block;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--fg);font-size:14px}
+.links a span{display:block;font-size:12px;color:var(--muted)}
+.links a:hover{border-color:var(--ai)}
+footer{margin-top:32px;font-size:12px;color:var(--muted)}
+@media (max-width:420px){.slots li{grid-template-columns:60px 1fr}}
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">OSAKA · 3박 4일 자유여행</div>
+  <h1>오사카 가족여행</h1>
+  <div class="meta">
+    <span class="chip">11/25(수) – 11/28(토)</span>
+    <span class="chip">성인 3 · 소인 1 (만 11세)</span>
+    <span class="chip">간사이 공항(KIX)</span>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="목차">
+  <a href="#plan">일정</a><a href="#prep">준비물</a><a href="#notes">주의할 점</a><a href="#bus">버스 투어</a><a href="#money">환전</a><a href="#cruise">크루즈</a><a href="#food">맛집</a><a href="#links">링크</a>
+</nav>
+
+<section id="plan">
+  <h2>일정</h2>
+
+  <article class="day">
+    <div class="day-h"><span class="day-n">1</span><div><div class="day-t">도착 · 료칸</div><div class="day-d">11/25 수요일</div></div></div>
+    <ul class="slots">
+      <li><time>오전~</time><div><b>인천 → 간사이 공항, 입국</b><small>Visit Japan Web QR 제시</small></div></li>
+      <li><time>15:00</time><div><b>료칸 체크인 · 온천</b><small>체크인 시각 = 료칸 안내 기준</small></div></li>
+      <li><time>18:00</time><div><b>료칸 저녁(가이세키)</b><small>시작 시각 고정, 늦으면 사전 연락</small></div></li>
+    </ul>
+  </article>
+
+  <article class="day">
+    <div class="day-h"><span class="day-n">2</span><div><div class="day-t">유니버설 스튜디오 재팬</div><div class="day-d">11/26 목요일</div></div></div>
+    <ul class="slots">
+      <li><time>08:00</time><div><b>료칸 조식 · 체크아웃</b><small>짐 = 다음 숙소로 먼저 보내거나 코인로커</small></div></li>
+      <li><time>오전~</time><div><b>USJ</b><small>입장 직후 공식 앱으로 닌텐도 월드 정리권 발급</small></div></li>
+      <li><time>저녁</time><div><b>유니버설 시티워크 저녁 → 숙소</b><small>크리스마스 시즌 야간 쇼</small></div></li>
+    </ul>
+  </article>
+
+  <article class="day">
+    <div class="day-h"><span class="day-n">3</span><div><div class="day-t">버스 투어 · 도톤보리 밤</div><div class="day-d">11/27 금요일</div></div></div>
+    <ul class="slots">
+      <li><time>08:00</time><div><b>버스 투어 집합</b><small>난바 · 우메다 등, 바우처 기준</small></div></li>
+      <li><time>종일</time><div><b>교토 · 나라</b><small>코스는 상품 · 요일마다 다름(버스 투어 칸 참고).<br>단풍 절정기라 혼잡</small></div></li>
+      <li><time>18:30</time><div><b>도톤보리 저녁</b><small>예약 식당</small></div></li>
+      <li><time>20:00</time><div><b>톤보리 리버크루즈 (20분)</b><small>야경 시간대, 막배 21:00</small></div></li>
+    </ul>
+  </article>
+
+  <article class="day">
+    <div class="day-h"><span class="day-n">4</span><div><div class="day-t">전망 · 쇼핑 · 귀국</div><div class="day-d">11/28 토요일</div></div></div>
+    <ul class="slots">
+      <li><time>오전</time><div><b>오사카성 또는 우메다 스카이빌딩</b><small>체크아웃 후 짐은 숙소에 맡김</small></div></li>
+      <li><time>점심~</time><div><b>신사이바시 · 난바 쇼핑</b><small>면세는 출국할 때 환급(주의할 점 2번)</small></div></li>
+      <li><time>출발 3h 전</time><div><b>간사이 공항 → 세관 환급 → 출국</b><small>난바 → 공항 = 난카이 라피트 약 40분</small></div></li>
+    </ul>
+  </article>
+</section>
+
+<section id="prep">
+  <h2>준비물</h2>
+  <div class="prog"><div class="bar"><i style="width:4%"></i></div><span>완료 1 / 24</span></div>
+
+  <h3>출발 전 예약 · 구매</h3>
+  <ul class="list">
+    <li><span class="st ok">완료</span><div><b>11/25 료칸</b><small>위치 · 저녁 시각 · 픽업 여부 확인</small></div></li>
+    <li><span class="st ask">확인</span><div><b>항공권 4인</b><small>여권 영문 이름과 같은지 확인</small></div></li>
+    <li><span class="st ask">확인</span><div><b>26 · 27일 숙소</b><small>4인 1실 가능 여부, USJ 근처 또는 난바 추천</small></div></li>
+    <li><span class="st todo">미완</span><div><b>USJ 입장권 4인</b><small>날짜 지정, 날짜별로 가격이 다름</small></div></li>
+    <li><span class="st todo">미완</span><div><b>USJ 익스프레스 패스</b><small>닌텐도 월드 포함 상품 추천, 몇 주 전에 매진</small></div></li>
+    <li><span class="st todo">미완</span><div><b>11/27 버스 투어 4인</b><small>클룩 · KKday · 마이리얼트립, 한국어 가이드인지 확인</small></div></li>
+    <li><span class="st todo">미완</span><div><b>톤보리 리버크루즈 4인</b><small>클룩 · 와그 바우처 구매</small></div></li>
+    <li><span class="st todo">미완</span><div><b>27일 저녁 식당</b><small>네이버 지도 "맛집 예약" 필터</small></div></li>
+    <li><span class="st todo">미완</span><div><b>Visit Japan Web 4인 등록</b><small>입국 심사 · 세관 QR</small></div></li>
+    <li><span class="st todo">미완</span><div><b>여행자 보험</b><small>4인 한 번에 가입</small></div></li>
+    <li><span class="st todo">미완</span><div><b>eSIM 또는 포켓 와이파이</b><small>USJ 앱을 쓰려면 데이터 필수</small></div></li>
+    <li><span class="st todo">미완</span><div><b>트래블 카드 신청 · 엔화 충전</b><small>트래블로그 또는 트래블월렛, 배송 1주 정도</small></div></li>
+    <li><span class="st todo">미완</span><div><b>여권 4인</b><small>남은 유효기간 확인</small></div></li>
+  </ul>
+
+  <h3>짐</h3>
+  <ul class="list">
+    <li><span class="st todo">미완</span><div><b>여권 · 항공권 · 바우처</b><small>휴대폰 캡처 + 출력본</small></div></li>
+    <li><span class="st todo">미완</span><div><b>보조배터리</b><small>기내에만 가지고 탈 수 있음, 부치는 짐에 넣으면 안 됨</small></div></li>
+    <li><span class="st todo">미완</span><div><b>겉옷 · 경량 패딩</b><small>11월 말 아침저녁은 쌀쌀함</small></div></li>
+    <li><span class="st todo">미완</span><div><b>편한 신발</b><small>USJ · 투어 날은 하루 2만 보 넘게 걸음</small></div></li>
+    <li><span class="st todo">미완</span><div><b>상비약</b><small>소화제 · 해열제 · 밴드 · 멀미약(버스 투어)</small></div></li>
+    <li><span class="st todo">미완</span><div><b>돼지코(110V A형)</b><small>멀티탭 1개면 4명 다 충전 가능</small></div></li>
+  </ul>
+
+  <h3>있으면 좋은 것</h3>
+  <ul class="list">
+    <li><span class="st todo">미완</span><div><b>ICOCA 또는 모바일 Suica</b><small>아이폰은 지갑 앱에서 바로 발급</small></div></li>
+    <li><span class="st todo">미완</span><div><b>난카이 라피트 예약</b><small>공항 ↔ 난바 지정석</small></div></li>
+    <li><span class="st todo">미완</span><div><b>에코백 · 접이식 가방</b><small>쇼핑용</small></div></li>
+    <li><span class="st todo">미완</span><div><b>동전 지갑</b><small>엔화는 동전이 많음</small></div></li>
+    <li><span class="st todo">미완</span><div><b>USJ 공식 앱 설치</b><small>정리권 · 대기 시간 확인</small></div></li>
+  </ul>
+</section>
+
+<section id="notes">
+  <h2>주의할 점</h2>
+  <div class="note">
+    <div><b>1. 아이 요금 = 소인 (2014년 12월생, 여행 때 만 11세)</b><p>USJ 소인 요금(만 4~11세) 적용. 전철 소인 요금(초등학생) 적용.<br>버스 투어 · 크루즈 소인 기준은 상품마다 다르니 예약할 때 확인. 여권으로 나이 확인할 수 있음.</p></div>
+    <div class="hot"><b>2. 면세가 환급 방식으로 바뀜 (2026-11-01부터)</b><p>매장에서 세금 포함 가격을 다 내고, 출국할 때 공항 세관에서 돌려받음.<br>여권 필요, 같은 매장 · 같은 날 5,000엔 이상. 공항에 일찍 도착.</p></div>
+    <div><b>3. 닌텐도 월드 입장</b><p>입장권만으로는 입장 보장 안 됨. 게이트 통과 후 앱으로 정리권을 받고, 다 떨어지면 추첨.<br>료칸 체크아웃 후 늦게 도착하면 정리권이 없을 수 있어서 익스프레스 패스 추천.</p></div>
+    <div><b>4. 료칸</b><p>저녁 시작 시각이 정해져 있어 늦으면 미리 연락.<br>문신이 있으면 대욕장 이용이 제한될 수 있음.</p></div>
+    <div><b>5. 단풍 시즌</b><p>11월 말은 교토 단풍 절정. 버스 투어가 늦어질 수 있어 27일 저녁은 여유 있게.</p></div>
+    <div><b>6. USJ 크리스마스 시즌</b><p>이벤트 기간이라 사람이 많고 대기가 김.</p></div>
+  </div>
+</section>
+
+<section id="bus">
+  <h2>버스 투어 (11/27 금)</h2>
+  <h3>예약하는 법</h3>
+  <ol class="steps">
+    <li>와그 · 클룩 · KKday · 마이리얼트립에서 "오사카 출발 교토 나라 투어" 검색</li>
+    <li><b>금요일 코스</b>가 뭔지 확인. 상품마다 요일별로 코스가 다름</li>
+    <li>한국어 가이드인지, 소인 요금 기준이 몇 살까지인지 확인</li>
+    <li>날짜 11/27, 성인 3 · 소인 1로 결제</li>
+    <li>확정 메시지(카카오톡 · 이메일)에서 집합 장소 · 시각을 저장</li>
+  </ol>
+
+  <h3>예시 상품 (와그, 오사카 출발 교토 · 나라)</h3>
+  <dl class="kv">
+    <div><dt>금요일</dt><dd>A코스 = 나라공원 · 우지 녹차마을 · 후시미이나리 · 기요미즈데라</dd></div>
+    <div><dt>화목토</dt><dd>B코스 = 나라공원 · 아라시야마 · 니시키 시장 · 기요미즈데라<br>금요일엔 아라시야마가 빠짐</dd></div>
+    <div><dt>집합</dt><dd>08:00 출발, 10분 전까지 도착.<br>츠루동탄 소에몬초점 앞(도톤보리 근처)</dd></div>
+    <div><dt>포함</dt><dd>왕복 버스 · 가이드</dd></div>
+    <div><dt>불포함</dt><dd>점심 · 입장료(예: 기요미즈데라 500엔) · 개인 지출</dd></div>
+  </dl>
+
+  <h3>당일 챙길 것</h3>
+  <ul class="list">
+    <li><span class="st todo">당일</span><div><b>바우처 화면 · 여권</b><small>가이드가 바우처를 확인한 뒤 버스에 탐</small></div></li>
+    <li><span class="st todo">당일</span><div><b>입장료 · 점심용 현금</b><small>1인 3,000~5,000엔 정도</small></div></li>
+    <li><span class="st todo">당일</span><div><b>멀미약 · 물 · 보조배터리</b><small>교토까지 버스로 1시간 넘게 걸림</small></div></li>
+  </ul>
+  <p style="font-size:14px;color:var(--muted)">돌아오는 시각은 상품마다 다르고 단풍철엔 늦어질 수 있음. 저녁 식당은 19시 이후로 예약.</p>
+</section>
+
+<section id="money">
+  <h2>환전 · 결제</h2>
+  <h3>추천 = 트래블 카드 + 현금 조금</h3>
+  <dl class="kv">
+    <div><dt>트래블로그</dt><dd>하나카드. 하나은행 계좌 필요.<br>앱에서 엔화를 미리 충전, 세븐일레븐 ATM 출금 수수료 0엔 후기가 많음</dd></div>
+    <div><dt>트래블월렛</dt><dd>은행 상관없음. 세븐일레븐 ATM은 출금 수수료 약 110엔.<br>오사카 지하철 개찰구에서 카드를 대고 바로 탈 수 있음(기사 기준)</dd></div>
+  </dl>
+
+  <h3>하는 순서</h3>
+  <ol class="steps">
+    <li>지금: 트래블 카드 신청(배송 1주 정도). 어른 각자 1장씩 있으면 편함</li>
+    <li>출발 전: 앱에서 엔화 충전. 환율 낮을 때 나눠서 충전</li>
+    <li>간사이 공항 도착: 세븐일레븐 ATM에서 현금 조금 출금(화면 한국어 선택 가능)</li>
+    <li>현지: 가게 · 식당은 카드, 길거리 음식 · 사찰 · 코인로커는 현금</li>
+  </ol>
+
+  <h3>얼마나 준비할까 (4인 기준, 대략)</h3>
+  <ul class="list">
+    <li><span class="st ask">현금</span><div><b>3~5만 엔</b><small>타코야키 · 입장료 · 코인로커 · 자판기용. 모자라면 ATM에서 출금</small></div></li>
+    <li><span class="st ask">카드</span><div><b>나머지 전부</b><small>식당 · 쇼핑 · 교통. 면세 물건도 카드 결제 후 출국할 때 환급</small></div></li>
+  </ul>
+  <p style="font-size:14px;color:var(--muted)">수수료 · 혜택은 바뀔 수 있음. 출금 전에 ATM 화면의 수수료 안내를 확인.<br>마스터카드는 세븐 ATM 이용 시간이 00:10~23:50.</p>
+</section>
+
+<section id="cruise">
+  <h2>톤보리 리버크루즈</h2>
+  <dl class="kv">
+    <div><dt>코스</dt><dd>도톤보리강 약 20분, 가이드 해설</dd></div>
+    <div><dt>운항</dt><dd>11:00~21:00, 매시 00분 · 30분 출발</dd></div>
+    <div><dt>요금</dt><dd>성인 2,000엔 (오사카시 안내 기준)</dd></div>
+    <div><dt>타는 곳</dt><dd>다자에몬바시 선착장.<br>돈키호테 도톤보리점(노란 관람차) 강변 쪽, 난바역 도보 5분</dd></div>
+    <div><dt>예약</dt><dd>클룩 · 와그에서 바우처 구매 → 당일 매표소에서 탑승권으로 교환.<br>바우처만으로는 시간이 안 정해짐. 27일 오전에 미리 교환</dd></div>
+    <div><dt>주의</dt><dd>출발 15분 전 선착장 도착. 재즈 보트는 다른 상품</dd></div>
+  </dl>
+</section>
+
+<section id="food">
+  <h2>맛집</h2>
+  <div class="food">
+    <div><span class="k">오코노미야키</span><b>보테주 본점 도톤보리</b><p>1946년 창업, 철판 카운터 · 개별실</p><span class="tag y">온라인 예약</span></div>
+    <div><span class="k">오코노미야키</span><b>츠루하시 후게츠 에비스바시점</b><p>글리코 간판 옆, 직원이 구워 줌</p><span class="tag y">온라인 예약</span></div>
+    <div><span class="k">야키니쿠</span><b>미츠루소 본점 (흑모 와규)</b><p>난바역 14번 출구 도보 5분, 아이 동반 가능</p><span class="tag y">온라인 예약</span></div>
+    <div><span class="k">쿠시카츠</span><b>쿠시카츠 다루마 도톤보리점</b><p>소스는 한 번만 찍기</p><span class="tag n">줄 서기</span></div>
+    <div><span class="k">라멘</span><b>이치란</b><p>본점보다 분점이 대기 짧음</p><span class="tag n">줄 서기</span></div>
+    <div><span class="k">길거리</span><b>타코야키</b><p>도톤보리 곳곳, 서서 먹기</p><span class="tag n">줄 서기</span></div>
+  </div>
+
+  <h3>예약하는 법</h3>
+  <ol class="steps">
+    <li>네이버 지도에서 "도톤보리 맛집" 검색</li>
+    <li>왼쪽 위 <b>"맛집 예약"</b> 필터 누르기</li>
+    <li>식당 고르고 "예약하러 가기" → 타베로그 예약 페이지</li>
+    <li>날짜 · 4명 · 시간 입력, 메모에 "외국인, 아이 1명"</li>
+  </ol>
+  <p style="font-size:14px;color:var(--muted)">2~3주 전에 예약. 27일은 금요일 저녁이라 붐빔. 예약 버튼이 없는 식당은 현장 대기.<br>예약하고 안 가면 취소 수수료가 나올 수 있음.</p>
+</section>
+
+<section id="links">
+  <h2>링크</h2>
+  <ul class="links">
+    <li><a href="https://www.trvlogue.com/ko/dotonbori-wonder-cruise-booking" target="_blank" rel="noopener">도톤보리 크루즈 예약 후기<span>트래블로그 · 블로그 (제휴 링크 포함)</span></a></li>
+    <li><a href="https://www.waug.com/ko/activities/137457" target="_blank" rel="noopener">톤보리 리버크루즈 예약<span>와그</span></a></li>
+    <li><a href="https://osaka-info.jp/en/special/dc/event/detail444/" target="_blank" rel="noopener">톤보리 리버크루즈 공식 안내<span>오사카시 관광</span></a></li>
+    <li><a href="https://www.japankuru.com/ko/food/205594/" target="_blank" rel="noopener">네이버 × 타베로그 맛집 예약 방법<span>재팬쿠루</span></a></li>
+    <li><a href="https://www.tripstore.kr/blog/%EC%98%A4%EC%82%AC%EC%B9%B4-%EB%82%9C%EB%B0%94-%EB%8F%84%ED%86%A4%EB%B3%B4%EB%A6%AC-%EC%8B%A0%EC%82%AC%EC%9D%B4%EB%B0%94%EC%8B%9C-%EB%A7%9B%EC%A7%91-%EC%B6%94%EC%B2%9C-best-5" target="_blank" rel="noopener">난바 · 도톤보리 · 신사이바시 맛집 BEST 5<span>트립스토어 · 블로그</span></a></li>
+    <li><a href="https://www.byfood.com/ko/blog/osaka/dotonbori-osaka" target="_blank" rel="noopener">도톤보리 가이드<span>byFood · 블로그</span></a></li>
+    <li><a href="https://savorjapan.com/contents/discover-oishii-japan/best-okonomiyaki-restaurants-dotonbori-osaka-shinsaibashi-namba" target="_blank" rel="noopener">도톤보리 오코노미야키 TOP 6<span>Savor Japan · 영어</span></a></li>
+    <li><a href="https://jw-webmagazine.com/tips/restaurants-in-dotonbori/" target="_blank" rel="noopener">도톤보리 맛집 10선<span>Japan Wonder Travel · 영어</span></a></li>
+    <li><a href="https://happyell.co.jp/world/supernintendoworld-seiriken/" target="_blank" rel="noopener">USJ 닌텐도 월드 정리권 2026<span>happyell · 영어</span></a></li>
+    <li><a href="https://www.osakatourism.org/things-to-do-in-osaka/universal-studios-japan/" target="_blank" rel="noopener">USJ 가격 · 익스프레스 패스 2026<span>osakatourism · 영어</span></a></li>
+    <li><a href="https://www.japan-guide.com/news/tax-free-shopping.html" target="_blank" rel="noopener">2026년 11월 면세 제도 변경<span>japan-guide · 영어</span></a></li>
+    <li><a href="https://www.waug.com/ko/activities/147497" target="_blank" rel="noopener">오사카 출발 교토 · 나라 버스 투어<span>와그 · 요일별 코스</span></a></li>
+    <li><a href="https://www.card-gorilla.com/contents/detail/2848" target="_blank" rel="noopener">일본 여행 결제수단 BEST 4 (2026)<span>카드고릴라</span></a></li>
+    <li><a href="https://www.trvlogue.com/ko/kansai-airport-terminal-2-atm" target="_blank" rel="noopener">간사이 공항 세븐일레븐 ATM 출금 후기<span>트래블로그 · 블로그</span></a></li>
+    <li><a href="https://www.okinawaobaksa.com/info/?p=1379" target="_blank" rel="noopener">일본 편의점 ATM 수수료 비교<span>블로그</span></a></li>
+    <li><a href="https://v.daum.net/v/ufyLZux2nV" target="_blank" rel="noopener">오사카 지하철 트래블월렛 터치 결제<span>기사</span></a></li>
+    <li><a href="https://www.usj.co.jp/web/ko/kr" target="_blank" rel="noopener">USJ 공식 사이트<span>날짜별 정확한 가격</span></a></li>
+  </ul>
+</section>
+
+<footer>2026-10-29 기준. 가격 · 운항 시간은 예약 전에 공식 사이트에서 다시 확인.</footer>
+</div>
+
+</html>
