@@ -48,6 +48,8 @@ h3{font-size:15px;margin:20px 0 8px;color:var(--muted);font-weight:600}
 .slots b{font-weight:600}
 .slots small{display:block;color:var(--muted);font-size:13px}
 .slots .tt{display:block;color:var(--ai);font-weight:600}
+.slots li.alt{border-top:1px dashed var(--todo);margin-top:6px;padding-top:12px}
+.slots li.alt time{color:var(--kaki)}
 [id^="r"]{scroll-margin-top:12px}
 .prog{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:6px}
 .bar{flex:1;height:8px;border-radius:99px;background:var(--line);overflow:hidden}
@@ -127,35 +129,44 @@ footer{margin-top:32px;font-size:12px;color:var(--muted)}
   </article>
 
   <article class="day">
-    <div class="day-h"><span class="day-n">2</span><div><div class="day-t">유니버설 스튜디오 재팬</div><div class="day-d">11/17 화요일</div></div></div>
+    <div class="day-h"><span class="day-n">2</span><div><div class="day-t">유니버설 스튜디오 재팬 (A = 바로 USJ)</div><div class="day-d">11/17 화요일</div></div></div>
     <ul class="slots">
-      <li><time>08:00</time><div><b>료칸 조식 · 체크아웃</b><small>짐 = 들고 나가서 캔데오 호텔 프런트에 맡김</small></div></li>
+      <li><time>08:00</time><div><b>료칸 조식 · 체크아웃</b><small>짐 = 캐리어 1인 1개 들고 USJ 로 바로 감(호텔 안 들름)</small></div></li>
       <li><time>09:00</time><div><b>료칸 → 아리마 온천 버스 정류장</b><small><span class="tt">09:00 출발 → 09:10 도착 (걸어서 약 10분)</span>또는 료칸 셔틀<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=%E6%9C%88%E5%85%89%E5%9C%92+%E9%81%8A%E6%9C%88%E5%B1%B1%E8%8D%98+%E6%9C%89%E9%A6%AC%E7%94%BA318&destination=Arima+Onsen+bus+stop%2C+Kobe&travelmode=walking" target="_blank" rel="noopener">지도 →</a> · <a class="go" href="#r2a">가는 법 →</a></small></div></li>
       <li><time>09:30</time><div><b>아리마 온천 → 오사카 우메다 (한큐 고속버스)</b><small><span class="tt">09:30 출발 → 10:25 도착 (약 55분)</span>1,400엔, 지정석 = 미리 구매<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Arima+Onsen+bus+stop%2C+Kobe&destination=Osaka+Umeda&travelmode=transit" target="_blank" rel="noopener">지도 →</a> · <a class="go" href="#r2b">가는 법 →</a></small></div></li>
-      <li><time>10:30</time><div><b>우메다 → 캔데오 호텔, 짐 맡기기 (택시)</b><small><span class="tt">10:30 출발 → 약 10:45 도착 (예상)</span>체크인 전이라 프런트에 짐만 맡김<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Osaka+Umeda&destination=Candeo+Hotels+Osaka+The+Tower&travelmode=driving" target="_blank" rel="noopener">지도 →</a> · <a class="go" href="#r2c">가는 법 →</a></small></div></li>
-      <li><time>11:00</time><div><b>호텔 → USJ</b><small><span class="tt">11:00 출발 → 약 11:40 도착 (예상)</span>JR 오사카역 → 유니버설시티역 약 10~12분<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Candeo+Hotels+Osaka+The+Tower&destination=Universal+Studios+Japan&travelmode=transit" target="_blank" rel="noopener">지도 →</a> · <a class="go" href="#r2d">가는 법 →</a></small></div></li>
-      <li><time>11:40~</time><div><b>USJ</b><small>입장 직후 공식 앱으로 닌텐도 월드 정리권 발급<br><a class="go" href="#usj">USJ 가이드 →</a></small></div></li>
+      <li><time>10:25</time><div><b>우메다 → JR 오사카역 → 유니버설시티역</b><small><span class="tt">10:25 출발 → 약 10:50 도착 (예상)</span>걸어서 JR 오사카역(약 10분, 예상) → 유니버설시티역 약 10~12분(직통 또는 니시쿠조 환승)<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Osaka+Umeda&destination=Universal+City+Station&travelmode=transit" target="_blank" rel="noopener">지도 →</a> · <a class="go" href="#r2c">가는 법 →</a></small></div></li>
+      <li><time>10:50</time><div><b>캐리어 4개 맡기기</b><small><span class="tt">10:50 → 약 11:05 입장</span><b>파크 밖 대형 코인로커</b>(입장 손짐 검사장 맞은편). 안 들어가면 특대형(켄넬 옆)<br><a class="go" href="#r2d">가는 법 →</a></small></div></li>
+      <li><time>11:05~</time><div><b>USJ</b><small>입장 직후 공식 앱으로 닌텐도 월드 정리권 발급<br><a class="go" href="#usj">USJ 가이드 →</a></small></div></li>
       <li><time>저녁</time><div><b>유니버설 시티워크 저녁</b><small>추천 = 시티워크 4층 타코야키 파크(여러 가게 한곳).<br>17:30 부터 붐비니 일찍 가거나 늦게. 크리스마스 시즌 야간 쇼<br><a class="go" href="#food">맛집 →</a></small></div></li>
-      <li><time>밤</time><div><b>USJ → 캔데오 호텔, 체크인</b><small><span class="tt">저녁 먹고 출발 → 약 40분 뒤 도착 (예상)</span>폐장 직후 역이 붐빔<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Universal+Studios+Japan&destination=Candeo+Hotels+Osaka+The+Tower&travelmode=transit" target="_blank" rel="noopener">지도 →</a> · <a class="go" href="#r2e">가는 법 →</a></small></div></li>
+      <li><time>20:00</time><div><b>내일 투어 메일 확인</b><small>20:00~21:00 에 가이드 · 차량 정보 메일 옴(클룩). 스팸함도 확인, 여러 통이면 최신 메일 기준</small></div></li>
+      <li><time>밤</time><div><b>캐리어 찾기 → 캔데오 호텔, 체크인</b><small><span class="tt">저녁 먹고 출발 → 약 40분 뒤 도착 (예상)</span>유니버설시티역 → JR 오사카역 → 걸어서 호텔(약 15분, 예상). 호텔 = 기타구 도지마하마 1-1-27<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Universal+Studios+Japan&destination=Candeo+Hotels+Osaka+The+Tower&travelmode=transit" target="_blank" rel="noopener">지도 →</a> · <a class="go" href="#r2e">가는 법 →</a></small></div></li>
+      <li><time>밤</time><div><b>31층 인피니티 노천탕 (선택)</b><small>USJ 에서 하루 종일 걸은 다리 풀기. 너무 피곤하면 3일차 밤으로.<br>호텔 31층 = 지상 약 127m, 건물 안 가장 높은 인피니티 노천탕(기네스). 이용 시간 = 15:00 ~ 다음 날 11:00(블로그 정보).<br>아이 이용 · 남녀 시간 = 확인 안 됨 → 체크인 때 프런트에 "子供も入れますか？"</small></div></li>
+      <li class="alt"><time>플랜 B</time><div><b>숙소 먼저 들르기 (캐리어 = 호텔에 맡김)</b><small>고를 때 = 로커가 걱정되거나 밤에 캐리어 끌기 싫을 때. 09:30 버스 · 10:25 우메다 도착까지는 A 와 같음</small></div></li>
+      <li><time>10:25</time><div><b>우메다 → 캔데오 호텔, 짐 맡기기 (걸어서)</b><small><span class="tt">10:25 출발 → 약 10:50 도착 (걸어서 약 25분, 예상)</span>호텔 = 기타구 도지마하마 1-1-27. 체크인 전이라 프런트에 짐만 맡김<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Osaka+Umeda&destination=Candeo+Hotels+Osaka+The+Tower&travelmode=walking" target="_blank" rel="noopener">지도 →</a> · <a class="go" href="#r2f">가는 법 →</a></small></div></li>
+      <li><time>11:00</time><div><b>호텔 → USJ</b><small><span class="tt">11:00 출발 → 약 11:40 입장 (예상)</span>걸어서 JR 오사카역 → 유니버설시티역 약 10~12분. A 보다 약 35분 늦음<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Candeo+Hotels+Osaka+The+Tower&destination=Universal+Studios+Japan&travelmode=transit" target="_blank" rel="noopener">지도 →</a> · <a class="go" href="#r2g">가는 법 →</a></small></div></li>
+      <li><time>밤</time><div><b>USJ → 호텔, 체크인</b><small><span class="tt">저녁 먹고 출발 → 약 40분 뒤 도착 (예상)</span>캐리어 없이 빈손으로 돌아옴<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Universal+Studios+Japan&destination=Candeo+Hotels+Osaka+The+Tower&travelmode=transit" target="_blank" rel="noopener">지도 →</a> · <a class="go" href="#r2e">가는 법 →</a></small></div></li>
     </ul>
   </article>
 
   <article class="day">
     <div class="day-h"><span class="day-n">3</span><div><div class="day-t">버스 투어 · 도톤보리 밤</div><div class="day-d">11/18 수요일</div></div></div>
     <ul class="slots">
-      <li><time>07:30</time><div><b>호텔 → 투어 집합 장소</b><small><span class="tt">07:30 출발 → 약 07:50 도착</span>요도야바시역 → 미도스지선 → 난바역. 실제 장소 = 바우처 기준<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Candeo+Hotels+Osaka+The+Tower&destination=%E3%81%A4%E3%82%8B%E3%81%A8%E3%82%93%E3%81%9F%E3%82%93+%E5%AE%97%E5%8F%B3%E8%A1%9B%E9%96%80%E7%94%BA%E5%BA%97&travelmode=transit" target="_blank" rel="noopener">지도 →</a> · <a class="go" href="#r3a">가는 법 →</a></small></div></li>
-      <li><time>08:00</time><div><b>버스 투어 집합 → 교토 · 나라 (종일)</b><small>코스는 상품 · 요일마다 다름. 단풍 절정기라 혼잡<br><a class="go" href="#bus">버스 투어 →</a></small></div></li>
-      <li><time>18:30</time><div><b>투어 해산 → 크루즈 선착장, 탑승권 교환</b><small><span class="tt">18:30 해산 → 걸어서 이동</span>바우처는 선착장에서 시간 지정 표로 바꿔야 함.<br>19:00 배가 되면 바로 타고 저녁. 안 되면 21:00 막배로 교환<br><a class="go" href="https://www.google.com/maps/dir/?api=1&destination=Tombori+River+Cruise+Dotonbori&travelmode=walking" target="_blank" rel="noopener">지도 →</a> · <a class="go" href="#cruise">크루즈 →</a></small></div></li>
-      <li><time>19:30</time><div><b>도톤보리 저녁</b><small>추천 = 츠루하시 후게츠 에비스바시점 또는 보테주 본점.<br>온라인 예약, 투어가 늦어질 수 있어 19:00 예약도 괜찮음<br><a class="go" href="#food">맛집 →</a></small></div></li>
+      <li><time>07:00</time><div><b>호텔 조식 (뷔페)</b><small><span class="tt">07:00 → 07:40</span>열리자마자 입장. 유료 · 조식 포함 플랜인지 예약 확인</small></div></li>
+      <li><time>07:45</time><div><b>호텔 → 닛폰바시역 2번 출구 (투어 집합)</b><small><span class="tt">07:45 출발 → 약 08:15 도착 (예상)</span>걸어서 요도야바시역 약 6분 → 미도스지선 난바역 약 10분 → 걸어서 닛폰바시역 2번 출구 약 10분(예상).<br>집합 = 2번 출구 하리마야, 가이드 = "GOGODAY" 깃발<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Candeo+Hotels+Osaka+The+Tower&destination=%E6%97%A5%E6%9C%AC%E6%A9%8B%E9%A7%85+2%E7%95%AA%E5%87%BA%E5%8F%A3&travelmode=transit" target="_blank" rel="noopener">지도 →</a> · <a class="go" href="#r3a">가는 법 →</a></small></div></li>
+      <li><time>08:40</time><div><b>버스 투어 출발 → 교토 · 나라 (종일)</b><small>1순위 = 후보 5(호텔 픽업, 픽업 시각 미정) → 버스 투어 칸. 아래 시각은 후보 1(클룩) 기준 = 기요미즈데라 · 후시미 이나리 · 나라 공원. 내리는 곳 = 오사카(교토 안 거침).<br>후보 2(아라시야마) = 08:10 모임 · 19:00 도착 → 버스 투어 칸.<br>단풍 절정기라 혼잡<br><a class="go" href="https://www.klook.com/ko/activity/87236-kyoto-tour-nara/" target="_blank" rel="noopener">후보 1 →</a> · <a class="go" href="https://www.klook.com/ko/activity/112174-starting-from-1-person-osaka-kyoto-arashiyama-bus-tour/" target="_blank" rel="noopener">후보 2 →</a> · <a class="go" href="#bus">버스 투어 →</a></small></div></li>
+      <li><time>18:00</time><div><b>투어 도착 (킨테츠 닛폰바시) → 크루즈 선착장, 탑승권 교환</b><small><span class="tt">17:45~18:15 도착 (예상) → 걸어서 선착장 약 10분 (예상)</span>교통 · 날씨로 늦어질 수 있음(운영사 = 투어 뒤 예약 잡지 말 것).<br>바우처는 선착장에서 시간 지정 표로 바꿔야 함.<br>19:00 배가 되면 바로 타고 저녁. 안 되면 21:00 막배로 교환<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Kintetsu+Nippombashi+Station&destination=Tombori+River+Cruise+Dotonbori&travelmode=walking" target="_blank" rel="noopener">지도 →</a> · <a class="go" href="#cruise">크루즈 →</a></small></div></li>
+      <li><time>19:30</time><div><b>도톤보리 저녁</b><small>추천 = 츠루하시 후게츠 에비스바시점 또는 보테주 본점.<br>투어가 늦어질 수 있음 → 예약은 19:30 이후, 또는 예약 없이 줄 서기<br><a class="go" href="#food">맛집 →</a></small></div></li>
       <li><time>21:00</time><div><b>톤보리 리버크루즈 (막배)</b><small><span class="tt">21:00 출발 → 21:20 끝 (20분)</span>19:00 에 이미 탔으면 생략. 15분 전 선착장 도착<br><a class="go" href="https://www.google.com/maps/dir/?api=1&destination=Tombori+River+Cruise+Dotonbori&travelmode=walking" target="_blank" rel="noopener">지도 →</a> · <a class="go" href="#cruise">크루즈 →</a></small></div></li>
       <li><time>21:30</time><div><b>도톤보리 → 호텔</b><small><span class="tt">21:30 출발 → 약 21:50 도착</span>난바역 → 미도스지선 → 요도야바시역 + 도보 약 6분<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Tombori+River+Cruise+Dotonbori&destination=Candeo+Hotels+Osaka+The+Tower&travelmode=transit" target="_blank" rel="noopener">지도 →</a> · <a class="go" href="#r3d">가는 법 →</a></small></div></li>
+      <li><time>22:00</time><div><b>31층 인피니티 노천탕 (야경, 추천)</b><small><span class="tt">22:00 → 22:45</span>호텔 31층 = 지상 약 127m, 건물 안 가장 높은 인피니티 노천탕(기네스). 이용 시간 = 15:00 ~ 다음 날 11:00(블로그 정보).<br>아이 이용 · 남녀 시간 = 확인 안 됨 → 체크인 때 프런트에 "子供も入れますか？"</small></div></li>
     </ul>
   </article>
 
   <article class="day">
     <div class="day-h"><span class="day-n">4</span><div><div class="day-t">오사카성 · 쇼핑 · 귀국</div><div class="day-d">11/19 목요일</div></div></div>
     <ul class="slots">
-      <li><time>09:00</time><div><b>체크아웃 → 난카이 난바역 (택시)</b><small>캐리어 4개라 택시. 호텔에 다시 올 일 없음<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Candeo+Hotels+Osaka+The+Tower&destination=Nankai+Namba+Station&travelmode=driving" target="_blank" rel="noopener">지도 →</a> · <a class="go" href="#r4a">가는 법 →</a></small></div></li>
+      <li><time>07:30</time><div><b>31층 인피니티 노천탕 (아침, 선택)</b><small><span class="tt">07:30 → 08:15</span>아침 오사카 전망. 09:00 체크아웃이라 짐은 전날 밤에 싸 두기</small></div></li>
+      <li><time>09:00</time><div><b>체크아웃 → 난카이 난바역 (걸어서 + 지하철)</b><small><span class="tt">09:00 출발 → 약 09:30 도착 (예상)</span>걸어서 요도야바시역 약 6분 · 약 480m → 미도스지선 난바역 약 10분 → 걸어서 난카이 난바역 약 5~10분 · 약 400~800m.<br>캐리어 1인 1개, 역 엘리베이터 이용. 호텔에 다시 올 일 없음<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Candeo+Hotels+Osaka+The+Tower&destination=Nankai+Namba+Station&travelmode=transit" target="_blank" rel="noopener">지도 →</a> · <a class="go" href="#r4a">가는 법 →</a></small></div></li>
       <li><time>09:30</time><div><b>난카이 난바역에 캐리어 맡기기</b><small>3층 개찰구 밖 코인로커 = 대형 약 700~1,000엔 (4개 약 2,800~4,000엔, 현금 준비).<br>꽉 차면 2층 짐 보관 카운터 = 1개 약 800엔/일 (블로그 정보)</small></div></li>
       <li><time>10:00</time><div><b>난바 → 오사카성</b><small><span class="tt">10:00 출발 → 약 10:30 도착 (예상)</span><br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Nankai+Namba+Station&destination=Osaka+Castle&travelmode=transit" target="_blank" rel="noopener">지도 →</a> · <a class="go" href="#r4b">가는 법 →</a></small></div></li>
       <li><time>12:00</time><div><b>오사카성 → 신사이바시</b><small><span class="tt">12:00 출발 → 약 12:30 도착 (예상)</span><br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Osaka+Castle&destination=Shinsaibashi+Station&travelmode=transit" target="_blank" rel="noopener">지도 →</a> · <a class="go" href="#r4c">가는 법 →</a></small></div></li>
@@ -184,21 +195,24 @@ footer{margin-top:32px;font-size:12px;color:var(--muted)}
   </article>
 
   <article class="day">
-    <div class="day-h"><span class="day-n">2</span><div><div class="day-t">료칸 → 호텔(짐) → USJ → 호텔</div><div class="day-d">11/17 화</div></div></div>
+    <div class="day-h"><span class="day-n">2</span><div><div class="day-t">A = 료칸 → USJ(캐리어 로커) → 호텔 · B = 호텔 먼저</div><div class="day-d">11/17 화</div></div></div>
     <ul class="slots">
       <li id="r2a"><time>09:00</time><div><b>료칸 → 아리마 온천 버스 정류장</b><small><span class="tt">09:00 출발 → 09:10 도착</span>걸어서 약 10분 또는 료칸 셔틀<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=%E6%9C%88%E5%85%89%E5%9C%92+%E9%81%8A%E6%9C%88%E5%B1%B1%E8%8D%98+%E6%9C%89%E9%A6%AC%E7%94%BA318&destination=Arima+Onsen+bus+stop%2C+Kobe&travelmode=walking" target="_blank" rel="noopener">구글 지도 길찾기 →</a></small></div></li>
-      <li id="r2b"><time>09:30</time><div><b>아리마 온천 → 오사카 우메다 (고속버스)</b><small><span class="tt">09:30 출발 → 10:25 도착</span>한큐 버스 약 55분 · 1,400엔(지정석, 미리 구매).<br>또는 JR 고속버스(기차 회사 JR 이 운영하는 버스) → JR 오사카역 앞 하차, 약 65분 · 1,400엔<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Arima+Onsen+bus+stop%2C+Kobe&destination=Osaka+Umeda&travelmode=transit" target="_blank" rel="noopener">구글 지도 길찾기 →</a></small></div></li>
-      <li id="r2c"><time>10:30</time><div><b>우메다 → 캔데오 호텔, 짐 맡기기</b><small><span class="tt">10:30 출발 → 약 10:45 도착</span>체크인 전이라 프런트에 짐만 맡김. 캐리어 4개라 택시가 편함<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Osaka+Umeda&destination=Candeo+Hotels+Osaka+The+Tower&travelmode=driving" target="_blank" rel="noopener">구글 지도 길찾기 →</a></small></div></li>
-      <li id="r2d"><time>11:00</time><div><b>호텔 → USJ</b><small><span class="tt">11:00 출발 → 약 11:40 도착</span>JR 오사카역 → 유니버설시티역 약 10~12분(니시쿠조 환승 또는 직통)<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Candeo+Hotels+Osaka+The+Tower&destination=Universal+Studios+Japan&travelmode=transit" target="_blank" rel="noopener">구글 지도 길찾기 →</a></small></div></li>
-      <li id="r2e"><time>밤</time><div><b>USJ → 호텔</b><small><span class="tt">저녁 먹고 출발 → 약 40분 뒤 도착</span>유니버설시티역 → JR 오사카역 → 호텔. 폐장 직후 역이 붐빔<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Universal+Studios+Japan&destination=Candeo+Hotels+Osaka+The+Tower&travelmode=transit" target="_blank" rel="noopener">구글 지도 길찾기 →</a></small></div></li>
+      <li id="r2b"><time>09:30</time><div><b>아리마 온천 → 오사카 우메다 (고속버스)</b><small><span class="tt">09:30 출발 → 10:25 도착</span>한큐 버스 약 55분 · 1,400엔(지정석, 미리 구매).<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Arima+Onsen+bus+stop%2C+Kobe&destination=Osaka+Umeda&travelmode=transit" target="_blank" rel="noopener">구글 지도 길찾기 →</a></small></div></li>
+      <li id="r2c"><time>10:25</time><div><b>우메다 → 유니버설시티역</b><small><span class="tt">10:25 출발 → 약 10:50 도착</span>버스 내린 곳 → 걸어서 JR 오사카역(약 10분, 예상) → JR 유메사키선 유니버설시티역 약 10~12분(직통 또는 니시쿠조 환승).<br>캐리어 = 역 엘리베이터 이용<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Osaka+Umeda&destination=Universal+City+Station&travelmode=transit" target="_blank" rel="noopener">구글 지도 길찾기 →</a></small></div></li>
+      <li id="r2d"><time>10:50</time><div><b>유니버설시티역 → 파크 입구, 캐리어 맡기기</b><small><span class="tt">10:50 → 약 11:05 입장</span><b>파크 밖 대형 코인로커</b>(입장 손짐 검사장 맞은편). 안 들어가면 특대형(켄넬 옆). 요금 = 현장 요금표.<br>혼잡한 날 늦게 오면 대형 로커가 찰 수 있음<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Universal+City+Station&destination=Universal+Studios+Japan&travelmode=walking" target="_blank" rel="noopener">구글 지도 길찾기 →</a></small></div></li>
+      <li id="r2e"><time>밤</time><div><b>USJ → 호텔</b><small><span class="tt">저녁 먹고 출발 → 약 40분 뒤 도착</span>캐리어 찾기 → 유니버설시티역 → JR 오사카역 → 걸어서 호텔(약 15분, 예상). 폐장 직후 역이 붐빔<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Universal+Studios+Japan&destination=Candeo+Hotels+Osaka+The+Tower&travelmode=transit" target="_blank" rel="noopener">구글 지도 길찾기 →</a></small></div></li>
+      <li class="alt"><time>플랜 B</time><div><b>숙소 먼저 들르기</b><small>고를 때 = 로커가 걱정되거나 밤에 캐리어 끌기 싫을 때. 09:30 버스 · 10:25 우메다 도착까지는 A 와 같음</small></div></li>
+      <li id="r2f"><time>10:25</time><div><b>우메다 → 캔데오 호텔, 짐 맡기기</b><small><span class="tt">10:25 출발 → 약 10:50 도착 (걸어서 약 25분)</span>호텔 = 기타구 도지마하마 1-1-27. 캐리어 1인 1개 끌고 걸어감(택시 X). 체크인 전이라 프런트에 짐만 맡김<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Osaka+Umeda&destination=Candeo+Hotels+Osaka+The+Tower&travelmode=walking" target="_blank" rel="noopener">구글 지도 길찾기 →</a></small></div></li>
+      <li id="r2g"><time>11:00</time><div><b>호텔 → USJ</b><small><span class="tt">11:00 출발 → 약 11:40 입장</span>걸어서 JR 오사카역(약 15분, 예상) → 유니버설시티역 약 10~12분(직통 또는 니시쿠조 환승)<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Candeo+Hotels+Osaka+The+Tower&destination=Universal+Studios+Japan&travelmode=transit" target="_blank" rel="noopener">구글 지도 길찾기 →</a></small></div></li>
     </ul>
   </article>
 
   <article class="day">
     <div class="day-h"><span class="day-n">3</span><div><div class="day-t">호텔 → 버스 투어 · 도톤보리 → 호텔</div><div class="day-d">11/18 수</div></div></div>
     <ul class="slots">
-      <li id="r3a"><time>07:30</time><div><b>호텔 → 투어 집합 장소</b><small><span class="tt">07:30 출발 → 약 07:50 도착</span>요도야바시역(도보 약 6분) → 미도스지선 → 난바역, 약 10분.<br>예시 = 츠루동탄 소에몬초점. 실제 장소 = 바우처 기준<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Candeo+Hotels+Osaka+The+Tower&destination=%E3%81%A4%E3%82%8B%E3%81%A8%E3%82%93%E3%81%9F%E3%82%93+%E5%AE%97%E5%8F%B3%E8%A1%9B%E9%96%80%E7%94%BA%E5%BA%97&travelmode=transit" target="_blank" rel="noopener">구글 지도 길찾기 →</a></small></div></li>
-      <li id="r3b"><time>18:30</time><div><b>투어 해산 → 도톤보리 저녁</b><small><span class="tt">18:30 해산 → 걸어서 이동</span>해산 장소가 난바 근처면 걸어서 이동<br><a class="go" href="https://www.google.com/maps/dir/?api=1&destination=Tombori+River+Cruise+Dotonbori&travelmode=walking" target="_blank" rel="noopener">지도 →</a></small></div></li>
+      <li id="r3a"><time>07:45</time><div><b>호텔 → 닛폰바시역 2번 출구 (투어 집합)</b><small><span class="tt">07:45 출발 → 약 08:15 도착</span>① 호텔 → 요도야바시역 = 걸어서 약 6분 · 약 480m<br>② 미도스지선 → 난바역 = 약 10분<br>③ 난바역 → 닛폰바시역 2번 출구 = 걸어서 약 10분 · 약 800m (예상)<br>집합 = 2번 출구 하리마야, 08:40 출발. 가이드 = "GOGODAY" 깃발<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Candeo+Hotels+Osaka+The+Tower&destination=%E6%97%A5%E6%9C%AC%E6%A9%8B%E9%A7%85+2%E7%95%AA%E5%87%BA%E5%8F%A3&travelmode=transit" target="_blank" rel="noopener">구글 지도 길찾기 →</a></small></div></li>
+      <li id="r3b"><time>18:00</time><div><b>킨테츠 닛폰바시 (투어 도착) → 도톤보리</b><small><span class="tt">17:45~18:15 도착 (예상)</span>킨테츠 닛폰바시역 → 다자에몬바시 선착장 = 걸어서 약 10분 (예상). 투어 도착은 늦어질 수 있음<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Kintetsu+Nippombashi+Station&destination=Tombori+River+Cruise+Dotonbori&travelmode=walking" target="_blank" rel="noopener">지도 →</a></small></div></li>
       <li id="r3c"><time>19:00/21:00</time><div><b>톤보리 리버크루즈</b><small><span class="tt">19:00 또는 21:00 출발 → 20분 뒤 끝</span>다자에몬바시 선착장 = 돈키호테 도톤보리점 강변. 15분 전 도착<br><a class="go" href="https://www.google.com/maps/dir/?api=1&destination=Tombori+River+Cruise+Dotonbori&travelmode=walking" target="_blank" rel="noopener">지도 →</a></small></div></li>
       <li id="r3d"><time>밤</time><div><b>도톤보리 → 호텔</b><small><span class="tt">21:30 출발 → 약 21:50 도착</span>난바역 → 미도스지선 → 요도야바시역, 약 10분 + 도보 약 6분<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Tombori+River+Cruise+Dotonbori&destination=Candeo+Hotels+Osaka+The+Tower&travelmode=transit" target="_blank" rel="noopener">구글 지도 길찾기 →</a></small></div></li>
     </ul>
@@ -207,7 +221,7 @@ footer{margin-top:32px;font-size:12px;color:var(--muted)}
   <article class="day">
     <div class="day-h"><span class="day-n">4</span><div><div class="day-t">호텔 → 난바(짐) → 오사카성 · 쇼핑 → 공항 (복귀)</div><div class="day-d">11/19 목 · 귀국편 19:40</div></div></div>
     <ul class="slots">
-      <li id="r4a"><time>09:00</time><div><b>호텔 → 난카이 난바역 (택시)</b><small><span class="tt">09:00 체크아웃 → 택시</span>캐리어 4개 = 택시가 편함. 프런트에서 불러 달라고 하면 됨.<br>도착 후 캐리어 맡기기 = 3층 개찰구 밖 코인로커 = 대형 약 700~1,000엔 (4개 약 2,800~4,000엔, 현금 준비).<br>꽉 차면 2층 짐 보관 카운터 = 1개 약 800엔/일 (블로그 정보)<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Candeo+Hotels+Osaka+The+Tower&destination=Nankai+Namba+Station&travelmode=driving" target="_blank" rel="noopener">구글 지도 길찾기 →</a></small></div></li>
+      <li id="r4a"><time>09:00</time><div><b>호텔 → 난카이 난바역 (걸어서 + 지하철)</b><small><span class="tt">09:00 출발 → 약 09:30 도착</span>① 호텔 → 요도야바시역 = 걸어서 약 6분 · 약 480m<br>② 요도야바시역 → 미도스지선 → 난바역 = 약 10분 (3정거장)<br>③ 지하철 난바역 → 난카이 난바역 3층 개찰구 = 걸어서 약 5~10분 · 약 400~800m (예상). 캐리어 = 엘리베이터 이용<br>거리 = 걸어서 1분 ≈ 80m 로 계산 (택시 X).<br>도착 후 캐리어 맡기기 = 3층 개찰구 밖 코인로커 = 대형 약 700~1,000엔 (4개 약 2,800~4,000엔, 현금 준비).<br>꽉 차면 2층 짐 보관 카운터 = 1개 약 800엔/일 (블로그 정보)<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Candeo+Hotels+Osaka+The+Tower&destination=Nankai+Namba+Station&travelmode=transit" target="_blank" rel="noopener">구글 지도 길찾기 →</a></small></div></li>
       <li id="r4b"><time>10:00</time><div><b>난바 → 오사카성</b><small><span class="tt">10:00 출발 → 약 10:30 도착 (예상)</span>지하철 + 걸어서, 경로는 구글 지도 기준<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Nankai+Namba+Station&destination=Osaka+Castle&travelmode=transit" target="_blank" rel="noopener">구글 지도 길찾기 →</a></small></div></li>
       <li id="r4c"><time>12:00</time><div><b>오사카성 → 신사이바시 · 난바 쇼핑 · 점심</b><small><span class="tt">12:00 출발 → 약 12:30 도착 (예상)</span>신사이바시에서 난바까지 걸으며 쇼핑. 면세품은 뜯지 않음<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Osaka+Castle&destination=Shinsaibashi+Station&travelmode=transit" target="_blank" rel="noopener">구글 지도 길찾기 →</a></small></div></li>
       <li id="r4d"><time>15:00</time><div><b>쇼핑 → 난카이 난바역, 캐리어 찾기</b><small><span class="tt">15:20 까지 도착</span>신사이바시 ~ 난바 = 걸어서 가능<br><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Shinsaibashi+Station&destination=Nankai+Namba+Station&travelmode=walking" target="_blank" rel="noopener">구글 지도 길찾기 →</a></small></div></li>
@@ -241,10 +255,10 @@ footer{margin-top:32px;font-size:12px;color:var(--muted)}
   <h3>예상 교통비 (1인, 대략)</h3>
   <dl class="kv">
     <div><dt>1일차</dt><dd>공항 → 산노미야 2,200엔 + 아리마 버스 780엔 = 약 3,000엔</dd></div>
-    <div><dt>2일차</dt><dd>아리마 → 우메다 1,400엔 + JR 왕복 약 400엔 = 약 1,800엔 (+ 짐 택시)</dd></div>
+    <div><dt>2일차</dt><dd>아리마 → 우메다 1,400엔 + JR 왕복 약 400엔 = 약 1,800엔 (+ USJ 로커 · 짐 보관)</dd></div>
     <div><dt>3일차</dt><dd>지하철 왕복 = 약 500엔</dd></div>
     <div><dt>4일차</dt><dd>지하철 · 게이한 약 900엔 + 라피트 1,490엔 = 약 2,400엔</dd></div>
-    <div><dt>합계</dt><dd><b>성인 약 7,700엔 × 3 = 약 23,100엔</b><br><b>소인 약 3,900엔 (절반)</b><br><b>가족 4명 = 약 27,000엔</b> + 택시 · ICOCA 보증금 2,000엔(돌려받음)</dd></div>
+    <div><dt>합계</dt><dd><b>성인 약 7,700엔 × 3 = 약 23,100엔</b><br><b>소인 약 3,900엔 (절반)</b><br><b>가족 4명 = 약 27,000엔</b> + ICOCA 보증금 2,000엔(돌려받음)</dd></div>
   </dl>
   <p style="font-size:14px;color:var(--muted)">지하철 · JR 요금은 구간별 대략값. 버스 투어 · USJ 입장권은 빠짐.<br>ICOCA 충전 = 성인 1장에 1,500엔(처음 들어 있음)이면 대부분 됨, 모자라면 역에서 충전.</p>
 </section>
@@ -407,14 +421,43 @@ footer{margin-top:32px;font-size:12px;color:var(--muted)}
     <li>확정 메시지(카카오톡 · 이메일)에서 집합 장소 · 시각을 저장</li>
   </ol>
 
-  <h3>예시 상품 (와그, 오사카 출발 교토 · 나라)</h3>
+  <h3>후보 1 · 교토 + 나라 (클룩) — 지금 일정 기준</h3>
   <dl class="kv">
-    <div><dt>금요일</dt><dd>A코스 = 나라공원 · 우지 녹차마을 · 후시미이나리 · 기요미즈데라</dd></div>
-    <div><dt>화목토</dt><dd>B코스 = 나라공원 · 아라시야마 · 니시키 시장 · 기요미즈데라<br>수요일 운행 여부는 목록에 없음 — 예약 전 확인</dd></div>
-    <div><dt>집합</dt><dd>08:00 출발, 10분 전까지 도착.<br>츠루동탄 소에몬초점 앞(도톤보리 근처)</dd></div>
-    <div><dt>포함</dt><dd>왕복 버스 · 가이드</dd></div>
-    <div><dt>불포함</dt><dd>점심 · 입장료(예: 기요미즈데라 500엔) · 개인 지출</dd></div>
+    <div><dt>상품</dt><dd><a href="https://www.klook.com/ko/activity/87236-kyoto-tour-nara/" target="_blank" rel="noopener">기요미즈데라 · 후시미 이나리 · 나라 공원</a> · 6,875엔~ (검색 결과 기준)</dd></div>
+    <div><dt>집합</dt><dd>08:40 출발 · 닛폰바시역 2번 출구 하리마야.<br>가이드 = "GOGODAY" 깃발</dd></div>
+    <div><dt>전날</dt><dd>20:00~21:00 가이드 · 차량 정보 메일. 스팸함 확인, 여러 통이면 최신 기준. 성수기엔 늦게 올 수 있음</dd></div>
+    <div><dt>도착</dt><dd>17:45~18:15 (예상) · 오사카 킨테츠 닛폰바시. 교토 안 거침.<br>교통 · 날씨로 늦어질 수 있음 → 운영사 = 투어 뒤 예약 잡지 말 것</dd></div>
+    <div><dt>확인할 것</dt><dd>수요일(11/18) 운행 · 소인 나이 기준</dd></div>
   </dl>
+
+  <h3>후보 2 · 교토 + 아라시야마 (클룩)</h3>
+  <dl class="kv">
+    <div><dt>상품</dt><dd><a href="https://www.klook.com/ko/activity/112174-starting-from-1-person-osaka-kyoto-arashiyama-bus-tour/" target="_blank" rel="noopener">오사카 출발 교토 · 아라시야마 버스 투어</a></dd></div>
+    <div><dt>집합</dt><dd>08:10 오사카 미팅 · 08:30 출발 (20분 전 모임). 미팅 장소 = 아직 확인 안 됨</dd></div>
+    <div><dt>코스</dt><dd>09:30 후시미 이나리(약 60분) → 11:00 기요미즈데라 · 자유 점심(약 150분) → 14:00 금각사(약 40분) → 15:30 아라시야마(약 120분)</dd></div>
+    <div><dt>도착</dt><dd>19:00 오사카 복귀 (예상)</dd></div>
+    <div><dt>바뀌는 것</dt><dd>호텔 07:30 출발(조식 30분) · 저녁 예약 20:00 이후 · 크루즈 21:00 막배만</dd></div>
+  </dl>
+  <h3>후보 3 · 아마노하시다테 · 이네 후나야 (클룩)</h3>
+  <dl class="kv">
+    <div><dt>상품</dt><dd><a href="https://www.klook.com/ko/activity/154563-japan-s-three-most-scenic-spots-amanohashidate-ine-funaya-and-ine/" target="_blank" rel="noopener">일본 3대 절경 아마노하시다테 · 이네 후나야 일일 투어</a></dd></div>
+    <div><dt>확인할 것</dt><dd>집합 장소 · 시각 · 코스 · 도착 시각 · 수요일 운행 = 아직 안 적음</dd></div>
+  </dl>
+  <h3>후보 4 · 나라(사슴) + 아라시야마 + 후시미 이나리 (클룩)</h3>
+  <dl class="kv">
+    <div><dt>상품</dt><dd><a href="https://www.klook.com/ko/activity/110001-kyoto-nara-deer-arashiyama-fushimi-inari-day-tour/" target="_blank" rel="noopener">교토 · 나라 사슴 · 아라시야마 · 후시미 이나리 일일 투어</a></dd></div>
+    <div><dt>가이드</dt><dd>한국어 가이드 X</dd></div>
+    <div><dt>확인할 것</dt><dd>집합 장소 · 시각 · 도착 시각 · 수요일 운행 = 아직 안 적음</dd></div>
+  </dl>
+  <h3>★ 1순위 · 후보 5 · 기요미즈데라 + 나라 공원, 호텔 픽업 (클룩)</h3>
+  <dl class="kv">
+    <div><dt>상품</dt><dd><a href="https://www.klook.com/ko/activity/193340-kyoto-kiyomizu-dera-temple-nara-park-one-day-tour/" target="_blank" rel="noopener">교토 기요미즈데라 · 나라 공원 일일 투어</a></dd></div>
+    <div><dt>픽업</dt><dd>호텔 픽업 차량 옵션. 픽업 시각 = 아직 모름</dd></div>
+    <div><dt>가이드</dt><dd>영어 (픽업 옵션은 한국어 안 됨). 집합 시각 · 장소는 내릴 때마다 사진으로 남기기</dd></div>
+    <div><dt>확인할 것</dt><dd>픽업 시각 · 도착 시각 · 수요일 운행</dd></div>
+  </dl>
+  <p style="font-size:14px;color:var(--muted)">후보 1 = 나라 공원(사슴) 있음 · 18시 전 도착. 후보 2 = 금각사 · 아라시야마 있음 · 19시 도착. 후보 3 = 교토 북쪽 바닷가, 교토 · 나라 대신. 후보 4 = 코스 마음에 듦, 한국어 가이드 아님. <b>1순위 = 후보 5</b> (호텔 픽업 · 영어 가이드) — 픽업 시각 나오면 3일차 일정을 이 상품으로 맞춤. 고르면 일정 칸을 그 상품으로 맞춤.</p>
+  <p style="font-size:14px;color:var(--muted)">다른 후보 = <a href="https://www.waug.com/ko/activities/147497" target="_blank" rel="noopener">와그 교토 · 나라</a> (08:00 출발 · 츠루동탄 소에몬초점, 수요일 운행 미확인)</p>
 
   <h3>당일 챙길 것</h3>
   <ul class="list">
@@ -422,7 +465,7 @@ footer{margin-top:32px;font-size:12px;color:var(--muted)}
     <li><span class="st todo">당일</span><div><b>입장료 · 점심용 현금</b><small>1인 3,000~5,000엔 정도</small></div></li>
     <li><span class="st todo">당일</span><div><b>멀미약 · 물 · 보조배터리</b><small>교토까지 버스로 1시간 넘게 걸림</small></div></li>
   </ul>
-  <p style="font-size:14px;color:var(--muted)">돌아오는 시각은 상품마다 다르고 단풍철엔 늦어질 수 있음. 저녁 식당은 19시 이후로 예약.</p>
+  <p style="font-size:14px;color:var(--muted)">단풍철엔 도착이 늦어질 수 있음. 저녁 식당은 19:30 이후로 예약, 크루즈는 21:00 막배가 안전.</p>
 </section>
 
 <section id="money">
@@ -525,8 +568,12 @@ footer{margin-top:32px;font-size:12px;color:var(--muted)}
     <li><a href="https://happyell.co.jp/world/supernintendoworld-seiriken/" target="_blank" rel="noopener">USJ 닌텐도 월드 정리권 2026<span>happyell · 영어</span></a></li>
     <li><a href="https://www.osakatourism.org/things-to-do-in-osaka/universal-studios-japan/" target="_blank" rel="noopener">USJ 가격 · 익스프레스 패스 2026<span>osakatourism · 영어</span></a></li>
     <li><a href="https://www.japan-guide.com/news/tax-free-shopping.html" target="_blank" rel="noopener">2026년 11월 면세 제도 변경<span>japan-guide · 영어</span></a></li>
-    <li><a href="https://www.waug.com/ko/activities/147497" target="_blank" rel="noopener">오사카 출발 교토 · 나라 버스 투어<span>와그 · 요일별 코스</span></a></li>
-    <li><a href="https://www.klook.com/ko/activity/154563-japan-s-three-most-scenic-spots-amanohashidate-ine-funaya-and-ine/" target="_blank" rel="noopener">아마노하시다테 · 이네 후나야 일일 투어<span>클룩 · 후보</span></a></li>
+    <li><a href="https://www.klook.com/ko/activity/87236-kyoto-tour-nara/" target="_blank" rel="noopener">버스 투어 후보 1 · 교토 + 나라<span>클룩 · 닛폰바시 08:40</span></a></li>
+    <li><a href="https://www.klook.com/ko/activity/112174-starting-from-1-person-osaka-kyoto-arashiyama-bus-tour/" target="_blank" rel="noopener">버스 투어 후보 2 · 교토 + 아라시야마<span>클룩 · 08:30 출발 · 19:00 복귀</span></a></li>
+    <li><a href="https://www.waug.com/ko/activities/147497" target="_blank" rel="noopener">오사카 출발 교토 · 나라 버스 투어<span>와그 · 다른 후보</span></a></li>
+    <li><a href="https://www.klook.com/ko/activity/154563-japan-s-three-most-scenic-spots-amanohashidate-ine-funaya-and-ine/" target="_blank" rel="noopener">버스 투어 후보 3 · 아마노하시다테 · 이네 후나야<span>클룩</span></a></li>
+    <li><a href="https://www.klook.com/ko/activity/110001-kyoto-nara-deer-arashiyama-fushimi-inari-day-tour/" target="_blank" rel="noopener">버스 투어 후보 4 · 나라 사슴 + 아라시야마 + 후시미 이나리<span>클룩 · 한국어 가이드 X</span></a></li>
+    <li><a href="https://www.klook.com/ko/activity/193340-kyoto-kiyomizu-dera-temple-nara-park-one-day-tour/" target="_blank" rel="noopener">★ 버스 투어 1순위 · 기요미즈데라 + 나라 공원<span>클룩 · 호텔 픽업 · 영어 가이드</span></a></li>
     <li><a href="https://www.card-gorilla.com/contents/detail/2848" target="_blank" rel="noopener">일본 여행 결제수단 BEST 4 (2026)<span>카드고릴라</span></a></li>
     <li><a href="https://www.trvlogue.com/ko/kansai-airport-terminal-2-atm" target="_blank" rel="noopener">간사이 공항 세븐일레븐 ATM 출금 후기<span>트래블로그 · 블로그</span></a></li>
     <li><a href="https://www.okinawaobaksa.com/info/?p=1379" target="_blank" rel="noopener">일본 편의점 ATM 수수료 비교<span>블로그</span></a></li>
